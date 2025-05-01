@@ -24,47 +24,7 @@ class AppImages{
   static String chicken='figmaimg/chicken.png';
   static String pulses='figmaimg/pulses.png';
   static String rice='figmaimg/rice.png';
+  static String search='figmaimg/search.png';
+  static String banner='figmaimg/banner.png';
 
 }
-
-//
-// floatingActionButton: Align(
-// alignment: Alignment.centerRight,
-// child: ElevatedButton(onPressed: (){}, child: ImageIcon((AssetImage(AppIcons.apprightarrow))),
-// style: ElevatedButton.styleFrom(
-// shape: CircleBorder(),
-// padding: EdgeInsets.all(20),
-// backgroundColor: AppColors.gmaincolor,
-// )),
-// ),
-// appBar: AppBar(
-// leading: ImageIcon(AssetImage(AppIcons.appleftarrow)),
-// ),
-// body:
-// SingleChildScrollView(
-// child: Column(
-// mainAxisAlignment: MainAxisAlignment.start,
-// crossAxisAlignment: CrossAxisAlignment.start,
-// children: [
-//
-// Padding(
-// padding: EdgeInsets.symmetric(vertical: 30,horizontal: 30),
-// child: Textwidget(text: 'Enter your 4-digit code',fontsize: 20,fontcolor: Colors.black,)),
-//
-// Padding(
-// padding: EdgeInsets.symmetric(horizontal: 30),
-// child: Textwidget(text: 'Code', fontcolor: Colors.black, fontsize: 15)),
-// Padding(
-// padding: EdgeInsets.all(20),
-// child: TextField(
-// keyboardType: TextInputType.number,
-// decoration: InputDecoration(
-// hintText: '- - - -',
-// contentPadding:EdgeInsets.all(5)
-// ),
-// ),
-// )
-//
-// ],
-// ),
-// ),

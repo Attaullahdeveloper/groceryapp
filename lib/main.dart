@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:grocreyapp/controlelr/constants/appAssets/appimages.dart';
+import 'package:grocreyapp/controlelr/widgets/small_add_button.dart';
 import 'package:grocreyapp/models/shop_model_class/shop-model.dart';
+
 import 'package:grocreyapp/views/auth_views/login_screen/login-screen.dart';
 
 import 'package:grocreyapp/views/auth_views/signinscreen/signin-screen.dart';
 import 'package:grocreyapp/views/auth_views/signup_scrreen/signup-screen.dart';
+import 'package:grocreyapp/views/bottom_vav_bar/bottom-vav-bar.dart';
 import 'package:grocreyapp/views/home_views/shop_view/shop_view.dart';
 import 'package:grocreyapp/views/startingscreen/onbording_screen/Onboarding-screen.dart';
 import 'package:grocreyapp/views/startingscreen/splash_screen/splash-screen.dart';

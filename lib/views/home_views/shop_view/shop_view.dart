@@ -5,6 +5,7 @@ import 'package:grocreyapp/controlelr/widgets/small_add_button.dart';
 import 'package:grocreyapp/controlelr/widgets/text-widget.dart';
 import 'package:grocreyapp/models/shop_model_class/shop-model.dart';
 import 'package:grocreyapp/views/bottom_vav_bar/bottom-vav-bar.dart';
+import 'package:grocreyapp/views/home_views/shop_view/prodduct_detail_screen.dart';
 class Shopscreen extends StatefulWidget {
   const Shopscreen({super.key});
 
@@ -15,8 +16,18 @@ class Shopscreen extends StatefulWidget {
 class _ShopscreenState extends State<Shopscreen> {
   List<ShopModel> exclusiveoffer=[
     ShopModel(subtext: '7pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$4.99'),
+    ShopModel(subtext: '8pcs,priceg', image:AppImages.appleimg, maintext: 'Organic Bananas', pricetext: '\$14.99'),
+    ShopModel(subtext: '9pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$41.99'),
+    ShopModel(subtext: '10pcs,priceg', image:AppImages.appleimg, maintext: 'Organic Bananas', pricetext: '\$42.99'),
+    ShopModel(subtext: '11pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$34.99'),
   ];
-
+  List<ShopModel> bestSelling=[
+    ShopModel(subtext: '7pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$4.99'),
+    ShopModel(subtext: '8pcs,priceg', image:AppImages.appleimg, maintext: 'Organic Bananas', pricetext: '\$14.99'),
+    ShopModel(subtext: '9pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$41.99'),
+    ShopModel(subtext: '10pcs,priceg', image:AppImages.appleimg, maintext: 'Organic Bananas', pricetext: '\$42.99'),
+    ShopModel(subtext: '11pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$34.99'),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -137,82 +148,33 @@ class _ShopscreenState extends State<Shopscreen> {
                   ),
                   ),//--------------1st container--------------------------
         //------------------------------------------slider ends----------------------------------//
-              Row(
-                children: [
-                  Padding(
-                      padding: EdgeInsets.symmetric(horizontal: 17),
-                      child: Textwidget(text: 'Exclusive offer', fontcolor: Colors.black, fontsize: 24)),
-                  SizedBox(width: 100,),
-                  Textwidget(text: 'See All', fontcolor: AppColors.gmaincolor, fontsize: 16),
-                ],
-              ),
-            SizedBox(height: 10,),
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 17),
-              child: SingleChildScrollView(
-                scrollDirection:Axis.horizontal,
-                child: Row(
-                  children:[
-                    InkWell(
-                      onTap:(){},
+            Row(
+              children: [
+                Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 17),
+                    child: Textwidget(text: 'Exclusive offer', fontcolor: Colors.black, fontsize: 24)),
+                Spacer(),
+                Textwidget(text: 'See All', fontcolor: AppColors.gmaincolor, fontsize: 16),
+              ],
+            ),
+            SizedBox(
+              height: 250,
+              child: ListView.builder
+                (
+                  itemCount: exclusiveoffer.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context,index){
+                    return  InkWell(
+                      onTap:(){
+                        Navigator.push(context, MaterialPageRoute(builder: (context)=>Productdetailscreen(
+                            image: exclusiveoffer[index].image.toString(), maintext:
+                        exclusiveoffer[index].maintext.toString(),
+                            pricetext: exclusiveoffer[index].pricetext.toString(),
+                            desription: exclusiveoffer[index].maintext.toString())));
+                      },
                       child: Container(
-                      width: 150,
-                      height: 220,
-                      decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey.shade400),
-                        borderRadius: BorderRadius.circular(18),
-                      ),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Padding(
-                              padding:EdgeInsets.symmetric(horizontal:20,vertical: 10),
-                              child: Image.asset(AppImages.bananimg,)),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              child: Textwidget(text: "Organic Bananas", fontcolor: Colors.black, fontsize: 16)),
-                          Padding(
-                              padding: EdgeInsets.symmetric(horizontal: 5),
-                              child: Textwidget(text: '7pcs,priceg', fontcolor: AppColors.subtext, fontsize: 14)),
-                          Smalladdbutton()
-                        ],
-                      ),
-                                    ),
-                    ),
-                    SizedBox(width: 15,),
-                    InkWell(
-                      onTap: (){},
-                      child: Container(
-                        width: 150,
-                        height: 220,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(18),
-                        ),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                  padding:EdgeInsets.symmetric(horizontal:20,vertical: 10),
-                                  child: Image.asset(AppImages.appleimg,)),
-                              SizedBox(height: 17,),
-                              Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 5),
-                                  child: Textwidget(text: "Red Apples", fontcolor: Colors.black, fontsize: 16)),
-                              Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 5),
-                                  child: Textwidget(text: '1kg,priceg', fontcolor: AppColors.subtext, fontsize: 14)),
-                          Smalladdbutton(),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),
-                    SizedBox(width: 15,),
-                    InkWell(
-                      onTap:(){},
-                      child: Container(
+                        margin: EdgeInsets.all(10),
+                        padding: EdgeInsets.all(10),
                         width: 150,
                         height: 220,
                         decoration: BoxDecoration(
@@ -224,48 +186,165 @@ class _ShopscreenState extends State<Shopscreen> {
                           children: [
                             Padding(
                                 padding:EdgeInsets.symmetric(horizontal:20,vertical: 10),
-                                child: Image.asset(AppImages.bananimg,)),
+                                child: Image.asset(exclusiveoffer[index].image.toString())),
                             Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 5),
-                                child: Textwidget(text: "Organic Bananas", fontcolor: Colors.black, fontsize: 16)),
+                                child: Textwidget(text: exclusiveoffer[index].maintext.toString(), fontcolor: Colors.black, fontsize: 16)),
                             Padding(
                                 padding: EdgeInsets.symmetric(horizontal: 5),
-                                child: Textwidget(text: '7pcs,priceg', fontcolor: AppColors.subtext, fontsize: 14)),
-                         Smalladdbutton(),
+                                child: Textwidget(text: exclusiveoffer[index].subtext.toString(), fontcolor: AppColors.subtext, fontsize: 14)),
+                            Row(
+                              children: [
+                                Textwidget(text: exclusiveoffer[index].pricetext.toString(), fontcolor: Colors.black, fontsize: 18),
+                                Spacer(),
+                                Container(
+                                  width: 45,
+                                  height: 45,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(17),
+                                      color: AppColors.gmaincolor
+                                  ),
+                                  child: Center(child: IconButton(onPressed: (){}, icon: Icon(Icons.add))),
+                                )
+                              ],
+                            ),
+                           // Smalladdbutton()
                           ],
                         ),
                       ),
-                    ),
-                    SizedBox(width: 15,),
-                    InkWell(
-                      onTap: (){},
-                      child: Container(
-                        width: 150,
-                        height: 220,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Colors.grey.shade400),
-                          borderRadius: BorderRadius.circular(18),
-                        ),
-                        child: SingleChildScrollView(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Padding(
-                                  padding:EdgeInsets.symmetric(horizontal:20,vertical: 10),
-                                  child: Image.asset(AppImages.appleimg,)),
-                              SizedBox(height: 17,),
-                              Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 5),
-                                  child: Textwidget(text: "Red Apples", fontcolor: Colors.black, fontsize: 16)),
-                              Padding(
-                                  padding: EdgeInsets.symmetric(horizontal: 5),
-                                  child: Textwidget(text: '1kg,priceg', fontcolor: AppColors.subtext, fontsize: 14)),
-                          Smalladdbutton(),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ),],), ),),
+                    );
+                  }),
+            ),
+
+              // Row(
+              //   children: [
+              //     Padding(
+              //         padding: EdgeInsets.symmetric(horizontal: 17),
+              //         child: Textwidget(text: 'Exclusive offer', fontcolor: Colors.black, fontsize: 24)),
+              //     SizedBox(width: 100,),
+              //     Textwidget(text: 'See All', fontcolor: AppColors.gmaincolor, fontsize: 16),
+              //   ],
+              // ),
+            // SizedBox(height: 10,),
+            // Padding(
+            //   padding: EdgeInsets.symmetric(horizontal: 17),
+            //   child: SingleChildScrollView(
+            //     scrollDirection:Axis.horizontal,
+            //     child: Row(
+            //       children:[
+            //         InkWell(
+            //           onTap:(){},
+            //           child: Container(
+            //           width: 150,
+            //           height: 220,
+            //           decoration: BoxDecoration(
+            //             border: Border.all(color: Colors.grey.shade400),
+            //             borderRadius: BorderRadius.circular(18),
+            //           ),
+            //           child: Column(
+            //             crossAxisAlignment: CrossAxisAlignment.start,
+            //             children: [
+            //               Padding(
+            //                   padding:EdgeInsets.symmetric(horizontal:20,vertical: 10),
+            //                   child: Image.asset(AppImages.bananimg,)),
+            //               Padding(
+            //                   padding: EdgeInsets.symmetric(horizontal: 5),
+            //                   child: Textwidget(text: "Organic Bananas", fontcolor: Colors.black, fontsize: 16)),
+            //               Padding(
+            //                   padding: EdgeInsets.symmetric(horizontal: 5),
+            //                   child: Textwidget(text: '7pcs,priceg', fontcolor: AppColors.subtext, fontsize: 14)),
+            //               Smalladdbutton()
+            //             ],
+            //           ),
+            //                         ),
+            //         ),
+            //         SizedBox(width: 15,),
+            //         InkWell(
+            //           onTap: (){},
+            //           child: Container(
+            //             width: 150,
+            //             height: 220,
+            //             decoration: BoxDecoration(
+            //               border: Border.all(color: Colors.grey.shade400),
+            //               borderRadius: BorderRadius.circular(18),
+            //             ),
+            //             child: SingleChildScrollView(
+            //               child: Column(
+            //                 crossAxisAlignment: CrossAxisAlignment.start,
+            //                 children: [
+            //                   Padding(
+            //                       padding:EdgeInsets.symmetric(horizontal:20,vertical: 10),
+            //                       child: Image.asset(AppImages.appleimg,)),
+            //                   SizedBox(height: 17,),
+            //                   Padding(
+            //                       padding: EdgeInsets.symmetric(horizontal: 5),
+            //                       child: Textwidget(text: "Red Apples", fontcolor: Colors.black, fontsize: 16)),
+            //                   Padding(
+            //                       padding: EdgeInsets.symmetric(horizontal: 5),
+            //                       child: Textwidget(text: '1kg,priceg', fontcolor: AppColors.subtext, fontsize: 14)),
+            //               Smalladdbutton(),
+            //                 ],
+            //               ),
+            //             ),
+            //           ),
+            //         ),
+            //         SizedBox(width: 15,),
+            //         InkWell(
+            //           onTap:(){},
+            //           child: Container(
+            //             width: 150,
+            //             height: 220,
+            //             decoration: BoxDecoration(
+            //               border: Border.all(color: Colors.grey.shade400),
+            //               borderRadius: BorderRadius.circular(18),
+            //             ),
+            //             child: Column(
+            //               crossAxisAlignment: CrossAxisAlignment.start,
+            //               children: [
+            //                 Padding(
+            //                     padding:EdgeInsets.symmetric(horizontal:20,vertical: 10),
+            //                     child: Image.asset(AppImages.bananimg,)),
+            //                 Padding(
+            //                     padding: EdgeInsets.symmetric(horizontal: 5),
+            //                     child: Textwidget(text: "Organic Bananas", fontcolor: Colors.black, fontsize: 16)),
+            //                 Padding(
+            //                     padding: EdgeInsets.symmetric(horizontal: 5),
+            //                     child: Textwidget(text: '7pcs,priceg', fontcolor: AppColors.subtext, fontsize: 14)),
+            //              Smalladdbutton(),
+            //               ],
+            //             ),
+            //           ),
+            //         ),
+            //         SizedBox(width: 15,),
+            //         InkWell(
+            //           onTap: (){},
+            //           child: Container(
+            //             width: 150,
+            //             height: 220,
+            //             decoration: BoxDecoration(
+            //               border: Border.all(color: Colors.grey.shade400),
+            //               borderRadius: BorderRadius.circular(18),
+            //             ),
+            //             child: SingleChildScrollView(
+            //               child: Column(
+            //                 crossAxisAlignment: CrossAxisAlignment.start,
+            //                 children: [
+            //                   Padding(
+            //                       padding:EdgeInsets.symmetric(horizontal:20,vertical: 10),
+            //                       child: Image.asset(AppImages.appleimg,)),
+            //                   SizedBox(height: 17,),
+            //                   Padding(
+            //                       padding: EdgeInsets.symmetric(horizontal: 5),
+            //                       child: Textwidget(text: "Red Apples", fontcolor: Colors.black, fontsize: 16)),
+            //                   Padding(
+            //                       padding: EdgeInsets.symmetric(horizontal: 5),
+            //                       child: Textwidget(text: '1kg,priceg', fontcolor: AppColors.subtext, fontsize: 14)),
+            //               Smalladdbutton(),
+            //                 ],
+            //               ),
+            //             ),
+            //           ),
+            //         ),],), ),),
                 //--------------------------------Exclusive offer ends---------------------------------//
            SizedBox(height: 20,),
             Row(

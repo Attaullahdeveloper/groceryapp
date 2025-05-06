@@ -15,11 +15,11 @@ class Shopscreen extends StatefulWidget {
 
 class _ShopscreenState extends State<Shopscreen> {
   List<ShopModel> exclusiveoffer=[
-    ShopModel(subtext: '7pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$4.99'),
-    ShopModel(subtext: '8pcs,priceg', image:AppImages.appleimg, maintext: 'Organic Bananas', pricetext: '\$14.99'),
-    ShopModel(subtext: '9pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$41.99'),
-    ShopModel(subtext: '10pcs,priceg', image:AppImages.appleimg, maintext: 'Organic Bananas', pricetext: '\$42.99'),
-    ShopModel(subtext: '11pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$34.99'),
+    ShopModel(subtext: '7pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '4.99'),
+    ShopModel(subtext: '8pcs,priceg', image:AppImages.appleimg, maintext: 'Organic Bananas', pricetext: '14.99'),
+    ShopModel(subtext: '9pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '41.99'),
+    ShopModel(subtext: '10pcs,priceg', image:AppImages.appleimg, maintext: 'Organic Bananas', pricetext: '42.99'),
+    ShopModel(subtext: '11pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '34.99'),
   ];
   List<ShopModel> bestSelling=[
     ShopModel(subtext: '7pcs,priceg', image:AppImages.banaImage, maintext: 'Organic Bananas', pricetext: '\$4.99'),
@@ -195,7 +195,7 @@ class _ShopscreenState extends State<Shopscreen> {
                                 child: Textwidget(text: exclusiveoffer[index].subtext.toString(), fontcolor: AppColors.subtext, fontsize: 14)),
                             Row(
                               children: [
-                                Textwidget(text: exclusiveoffer[index].pricetext.toString(), fontcolor: Colors.black, fontsize: 18),
+                                Textwidget(text: '\$${exclusiveoffer[index].pricetext.toString()}', fontcolor: Colors.black, fontsize: 18),
                                 Spacer(),
                                 Container(
                                   width: 45,

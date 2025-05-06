@@ -11,6 +11,17 @@ class Productdetailscreen extends StatefulWidget {
 }
 
 class _ProductdetailscreenState extends State<Productdetailscreen> {
+  double price= 0;
+  double price1= 0;
+  int value=1;
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+    price=double.parse(widget.pricetext);
+    price1=double.parse(widget.pricetext);
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +44,28 @@ class _ProductdetailscreenState extends State<Productdetailscreen> {
             Text(widget.maintext),
             Text(widget.pricetext),
             Text(widget.desription),
+            Row(children: [
+              IconButton(onPressed: (){
+                value--;
+                price=price-price1;
+
+                setState(() {
+
+                });
+              }, icon: Icon(Icons.remove)),
+              Container(
+                child: Center(child: Text('$value'),),
+              ),
+              IconButton(onPressed: (){
+                value++;
+                price=price1+price;
+                setState(() {
+
+                });
+              }, icon: Icon(Icons.add)),
+              Spacer(),
+              Text('$price')
+            ],)
 
           ],
         ),

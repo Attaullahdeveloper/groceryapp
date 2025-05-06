@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocreyapp/models/shop_model_class/shop-model.dart';
+import 'package:grocreyapp/views/bottom_vav_bar/bottom-vav-bar.dart';
+import 'package:grocreyapp/views/home_views/new_shop_screen/ShopPro_detail.dart';
 
 import '../../../controlelr/constants/appAssets/appimages.dart';
 import '../../../controlelr/constants/appColors/appcolors.dart';
@@ -32,9 +34,16 @@ class _NewshopscreenState extends State<Newshopscreen> {
     ShopModel(subtext: '', image: AppImages.pulses, maintext: 'Pulses', pricetext: ''),
     ShopModel(subtext: '', image: AppImages.rice, maintext: 'Rice', pricetext: ''),
   ];
+  List<ShopModel> lastcontainer=[
+    ShopModel(subtext: '3kg', image: AppImages.meat, maintext: 'Fresh meat', pricetext: '\$4.99'),
+    ShopModel(subtext: '3kg', image: AppImages.chicken, maintext: 'Chicken', pricetext: '\$4.99'),
+    ShopModel(subtext: '3kg', image: AppImages.meat, maintext: 'Fresh meat', pricetext: '\$4.99'),
+    ShopModel(subtext: '3kg', image: AppImages.chicken, maintext: 'Chicken', pricetext: '\$4.99'),
+  ];
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+     // bottomNavigationBar: BottomBar(),
       body: SingleChildScrollView(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
@@ -170,7 +179,12 @@ class _NewshopscreenState extends State<Newshopscreen> {
                     itemBuilder:(context,index){
                       return
                         InkWell(
-                        onTap: (){},
+                        onTap: (){
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Newproductdetail(
+                              maintext: exclusiveoffer[index].maintext.toString(),
+                              subtext: exclusiveoffer[index].subtext.toString(),
+                              image: exclusiveoffer[index].image.toString())));
+                        },
                         child: Container(
                           margin: EdgeInsets.all(5),
                           width: 152,
@@ -185,10 +199,11 @@ class _NewshopscreenState extends State<Newshopscreen> {
                               mainAxisAlignment: MainAxisAlignment.start,
                               crossAxisAlignment: CrossAxisAlignment.start,
                               children: [
-                                Align(
-                                    alignment:Alignment.center,
+                                Padding(
+                                    padding:EdgeInsets.symmetric(horizontal:12,vertical: 15),
                                     child: Image.asset(exclusiveoffer[index].image.toString())),
-                                SizedBox(height: 20,),
+                               Spacer(),
+                               // SizedBox(height: 20,),
                                 Textwidget(text: exclusiveoffer[index].maintext.toString(), fontcolor: Colors.black, fontsize: 16),
                                 Textwidget(text: exclusiveoffer[index].subtext.toString(), fontcolor: AppColors.subtext, fontsize: 14),
                               Row(children: [
@@ -214,6 +229,7 @@ class _NewshopscreenState extends State<Newshopscreen> {
               ),
             ),
             // ------------------------------------------List builder exclusive offer-----------------------------//
+          SizedBox(height: 20,),
             Row(
               children: [
                 Padding(
@@ -248,10 +264,10 @@ class _NewshopscreenState extends State<Newshopscreen> {
                                   mainAxisAlignment: MainAxisAlignment.start,
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
-                                    Align(
-                                        alignment:Alignment.center,
+                                    Padding(
+                                        padding:EdgeInsets.symmetric(horizontal:12,vertical: 15),
                                         child: Image.asset(bestselling[index].image.toString())),
-                                    SizedBox(height: 20,),
+                                    Spacer(),
                                     Textwidget(text: bestselling[index].maintext.toString(), fontcolor: Colors.black, fontsize: 16),
                                     Textwidget(text: bestselling[index].subtext.toString(), fontcolor: AppColors.subtext, fontsize: 14),
                                     Row(children: [
@@ -277,7 +293,99 @@ class _NewshopscreenState extends State<Newshopscreen> {
               ),
             ),
             //-------------------------------------------best selling ----------------------------
+            SizedBox(height: 20,),
+            Row(
+              children: [
+                Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 17),
+                    child: Textwidget(text: 'Groceries', fontcolor: Colors.black, fontsize: 24)),
+                SizedBox(width: 150,),
+                Textwidget(text: 'See All', fontcolor: AppColors.gmaincolor, fontsize: 16),
+              ],
+            ),
+            SizedBox(
+              height: 100,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 17),
+                child: ListView.builder(
+                    itemCount: groceries.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder: (context,index){
+                      return Container(
+                        margin: EdgeInsets.all(5),
+                        width: 240,
+                        height: 100,
+                        decoration: BoxDecoration(
+                          color:Colors.orange.shade100,
+                          borderRadius: BorderRadius.circular(18),
+                        ),
+                        child: Row(
+                          children: [
+                            SizedBox(width: 10,),
+                            Image.asset(groceries[index].image.toString()),
+                            SizedBox(width: 10,),
+                            Textwidget(text: groceries[index].maintext.toString(), fontcolor: Colors.black, fontsize:18),
+                          ],
+                        ),
+                      );
+                    }),
+              ),
+            ),
+            //-----------------------------------------------------groceries ends------------------------------------------------------//
+            SizedBox(height: 20,),
+            SizedBox(
+              height: 230,
+              child: Padding(
+                padding: EdgeInsets.symmetric(horizontal: 17),
+                child: ListView.builder(
+                    itemCount: lastcontainer.length,
+                    scrollDirection: Axis.horizontal,
+                    itemBuilder:(context,index){
+                      return
+                        InkWell(
+                          onTap: (){},
+                          child: Container(
+                              margin: EdgeInsets.all(5),
+                              width: 152,
+                              height: 230,
+                              decoration: BoxDecoration(
+                                border: Border.all(color: Colors.grey.shade400),
+                                borderRadius: BorderRadius.circular(18),
+                              ),
+                              child: Padding(
+                                padding: EdgeInsets.symmetric(horizontal: 10),
+                                child: Column(
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                  children: [
+                                    Padding(
+                                        padding:EdgeInsets.symmetric(horizontal:12,vertical: 15),
+                                        child: Image.asset(lastcontainer[index].image.toString())),
+                                    Spacer(),
+                                    Textwidget(text: lastcontainer[index].maintext.toString(), fontcolor: Colors.black, fontsize: 16),
+                                    Textwidget(text: lastcontainer[index].subtext.toString(), fontcolor: AppColors.subtext, fontsize: 14),
+                                    Row(children: [
+                                      Textwidget(text: lastcontainer[index].pricetext.toString(), fontcolor: Colors.black, fontsize: 18),
+                                      Spacer(),
+                                      Container(
+                                        width: 45,
+                                        height: 45,
+                                        decoration: BoxDecoration(
+                                            borderRadius: BorderRadius.circular(17),
+                                            color: AppColors.gmaincolor
+                                        ),
+                                        child: Center(child: IconButton(onPressed: (){}, icon: Icon(Icons.add))),
+                                      ),
+                                    ],)
 
+                                  ],
+                                ),
+                              )
+                          ),
+                        );
+                    }),
+              ),
+            ),
         
           ],
         ),

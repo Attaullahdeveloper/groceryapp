@@ -13,7 +13,7 @@ class Newproductdetail extends StatefulWidget {
 }
 
 class _NewproductdetailState extends State<Newproductdetail> {
-  bool favourite=false;// for favourite button colors---------------
+  bool favourite=true;// for favourite button colors---------------
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,13 +51,14 @@ class _NewproductdetailState extends State<Newproductdetail> {
               Textwidget(text: (widget.maintext), fontcolor: Colors.black, fontsize: 24),
             Spacer(),
             IconButton(onPressed: (){
-              if(favourite==false)
+              if(favourite==true)
               {
-                favourite=true;
+                favourite=false
+                ;
               }
               else
                 {
-                  favourite=false;
+                  favourite=true;
                 }
               setState(() {
 

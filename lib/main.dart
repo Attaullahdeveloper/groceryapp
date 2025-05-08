@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocreyapp/check-box.dart';
 import 'package:grocreyapp/controlelr/constants/appAssets/appimages.dart';
 import 'package:grocreyapp/controlelr/widgets/small_add_button.dart';
 import 'package:grocreyapp/models/shop_model_class/shop-model.dart';
@@ -35,7 +36,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: BottomBar()//RadioClass()//Newshopscreen(),
+      home: Newshopscreen()//BottomBar()//RadioClass()//Newshopscreen(),
       // Newshopscreen(maintext: '', subtext: 'subtext', image: 'image')//Newshopscreen()//Productdetailscreen(image: AppImages.appleimg,maintext: ,),
      // Shopscreen()// IntroClass()//Numberscreen()//Loginscreen()//Loctionscreen()//Splashscreen(),
 

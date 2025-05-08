@@ -9,20 +9,14 @@ class Smalladdbutton extends StatelessWidget {
     return   Padding(
       padding: EdgeInsets.symmetric(horizontal: 5,vertical: 12
       ),
-      child: Row(
-        children: [
-          Textwidget(text: '\$4.99', fontcolor: Colors.black, fontsize: 18),
-          SizedBox(width: 45,),
-          Container(
-            width: 45,
-            height: 45,
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(17),
-                color: AppColors.gmaincolor
-            ),
-            child: Center(child: IconButton(onPressed: (){}, icon: Icon(Icons.add))),
-          )
-        ],
+      child: Container(
+        width: 45,
+        height: 45,
+        decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(17),
+            color: AppColors.gmaincolor
+        ),
+        child: Center(child: IconButton(onPressed: (){}, icon: Icon(Icons.add))),
       ),
     );
   }

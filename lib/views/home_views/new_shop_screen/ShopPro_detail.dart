@@ -69,7 +69,16 @@ class _NewproductdetailState extends State<Newproductdetail> {
           ),
             Padding(
                 padding: EdgeInsets.symmetric(horizontal: 20,),
-                child: Textwidget(text: (widget.subtext), fontcolor: AppColors.subtext, fontsize: 16))
+                child: Textwidget(text: (widget.subtext), fontcolor: AppColors.subtext, fontsize: 16)),
+            // the increament and decreament button starts from here----------------------------------
+            Row(
+              children: [
+                Container(
+                  height: ,
+                  width: ,
+                )
+              ],
+            )
 
           ],
         ),

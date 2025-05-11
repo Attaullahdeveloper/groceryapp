@@ -16,17 +16,17 @@ class Newshopscreen extends StatefulWidget {
 
 class _NewshopscreenState extends State<Newshopscreen> {
   List<ShopModel> exclusiveoffer=[
-    ShopModel(subtext: '7pcs,priceg', image: AppImages.bananimg, maintext: 'Organic Bananas', pricetext: '\$4.99'),
-    ShopModel(subtext: '1kg', image: AppImages.appleimg, maintext: 'Red Apples', pricetext: '\$4.99'),
-    ShopModel(subtext: '7pcs,priceg', image: AppImages.bananimg, maintext: 'Organic Bananas', pricetext: '\$4.99'),
-    ShopModel(subtext: '1kg', image: AppImages.appleimg, maintext: 'Red Apples', pricetext: '\$4.99'),
+    ShopModel(subtext: '7pcs,priceg', image: AppImages.bananimg, maintext: 'Organic Bananas', pricetext: '4.99'),
+    ShopModel(subtext: '1kg', image: AppImages.appleimg, maintext: 'Red Apples', pricetext: '4.99'),
+    ShopModel(subtext: '7pcs,priceg', image: AppImages.bananimg, maintext: 'Organic Bananas', pricetext: '4.99'),
+    ShopModel(subtext: '1kg', image: AppImages.appleimg, maintext: 'Red Apples', pricetext: '4.99'),
 
   ];
   List<ShopModel> bestselling=[
-    ShopModel(subtext: '2kg', image: AppImages.tomato, maintext: 'Fresh tomatoes', pricetext:'\$4.99'),
-    ShopModel(subtext: '3pcs,priceg', image: AppImages.nothing, maintext: 'Garlic', pricetext: '\$4.99'),
-    ShopModel(subtext: '2kg', image: AppImages.tomato, maintext: 'Fresh tomatoes', pricetext:'\$4.99'),
-    ShopModel(subtext: '3pcs,priceg', image: AppImages.nothing, maintext: 'Garlic', pricetext: '\$4.99')
+    ShopModel(subtext: '2kg', image: AppImages.tomato, maintext: 'Fresh tomatoes', pricetext:'4.99'),
+    ShopModel(subtext: '3pcs,priceg', image: AppImages.nothing, maintext: 'Garlic', pricetext: '4.99'),
+    ShopModel(subtext: '2kg', image: AppImages.tomato, maintext: 'Fresh tomatoes', pricetext:'4.99'),
+    ShopModel(subtext: '3pcs,priceg', image: AppImages.nothing, maintext: 'Garlic', pricetext: '4.99')
   ];
   List<ShopModel> groceries=[
     ShopModel(subtext: '', image: AppImages.pulses, maintext: 'Pulses', pricetext: ''),
@@ -35,10 +35,10 @@ class _NewshopscreenState extends State<Newshopscreen> {
     ShopModel(subtext: '', image: AppImages.rice, maintext: 'Rice', pricetext: ''),
   ];
   List<ShopModel> lastcontainer=[
-    ShopModel(subtext: '3kg', image: AppImages.meat, maintext: 'Fresh meat', pricetext: '\$4.99'),
-    ShopModel(subtext: '3kg', image: AppImages.chicken, maintext: 'Chicken', pricetext: '\$4.99'),
-    ShopModel(subtext: '3kg', image: AppImages.meat, maintext: 'Fresh meat', pricetext: '\$4.99'),
-    ShopModel(subtext: '3kg', image: AppImages.chicken, maintext: 'Chicken', pricetext: '\$4.99'),
+    ShopModel(subtext: '3kg', image: AppImages.meat, maintext: 'Fresh meat', pricetext: '4.99'),
+    ShopModel(subtext: '3kg', image: AppImages.chicken, maintext: 'Chicken', pricetext: '4.99'),
+    ShopModel(subtext: '3kg', image: AppImages.meat, maintext: 'Fresh meat', pricetext: '4.99'),
+    ShopModel(subtext: '3kg', image: AppImages.chicken, maintext: 'Chicken', pricetext: '4.99'),
   ];
   @override
   Widget build(BuildContext context) {
@@ -183,7 +183,9 @@ class _NewshopscreenState extends State<Newshopscreen> {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=>Newproductdetail(
                               maintext: exclusiveoffer[index].maintext.toString(),
                               subtext: exclusiveoffer[index].subtext.toString(),
-                              image: exclusiveoffer[index].image.toString())));
+                              image: exclusiveoffer[index].image.toString(),
+                          pricetext: exclusiveoffer[index].pricetext.toString(),
+                          )));
                         },
                         child: Container(
                           margin: EdgeInsets.all(5),
@@ -207,7 +209,7 @@ class _NewshopscreenState extends State<Newshopscreen> {
                                 Textwidget(text: exclusiveoffer[index].maintext.toString(), fontcolor: Colors.black, fontsize: 16),
                                 Textwidget(text: exclusiveoffer[index].subtext.toString(), fontcolor: AppColors.subtext, fontsize: 14),
                               Row(children: [
-                                Textwidget(text: exclusiveoffer[index].pricetext.toString(), fontcolor: Colors.black, fontsize: 18),
+                                Textwidget(text: '\$${exclusiveoffer[index].pricetext.toString()}', fontcolor: Colors.black, fontsize: 18),
                                 Spacer(),
                                 Container(
                                   width: 45,
@@ -218,6 +220,7 @@ class _NewshopscreenState extends State<Newshopscreen> {
                                   ),
                                   child: Center(child: IconButton(onPressed: (){}, icon: Icon(Icons.add))),
                                 ),
+
                               ],)
 
                               ],

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:grocreyapp/check-box.dart';
 import 'package:grocreyapp/controlelr/constants/appAssets/appimages.dart';
 import 'package:grocreyapp/controlelr/widgets/small_add_button.dart';
 import 'package:grocreyapp/models/shop_model_class/shop-model.dart';
 import 'package:grocreyapp/radio-button.dart';
+import 'package:grocreyapp/text-field-class.dart';
 
 import 'package:grocreyapp/views/auth_views/login_screen/login-screen.dart';
 
@@ -28,7 +30,7 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
+    return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: ThemeData(
@@ -37,7 +39,7 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       home: Newshopscreen()//BottomBar()//RadioClass()//Newshopscreen(),
-      // Newshopscreen(maintext: '', subtext: 'subtext', image: 'image')//Newshopscreen()//Productdetailscreen(image: AppImages.appleimg,maintext: ,),
+      // Newopscreen(maintext: '', subtext: 'subtext', image: 'image')//Newshopscreen()//Productdetailscreen(image: AppImages.appleimg,maintext: ,),
      // Shopscreen()// IntroClass()//Numberscreen()//Loginscreen()//Loctionscreen()//Splashscreen(),
 
     );

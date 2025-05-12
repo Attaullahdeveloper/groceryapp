@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:grocreyapp/controlelr/constants/appAssets/appicons.dart';
 import 'package:grocreyapp/controlelr/constants/appColors/appcolors.dart';
+import 'package:grocreyapp/controlelr/widgets/green_button_widget.dart';
 import 'package:grocreyapp/controlelr/widgets/text-widget.dart';
 class Newproductdetail extends StatefulWidget {
   String image;
@@ -41,7 +43,7 @@ class _NewproductdetailState extends State<Newproductdetail> {
             // for the large imgae-------------------------
             Container(
               width: 413,
-              height: 371,
+              height: 330,
               decoration: BoxDecoration(
                gradient: LinearGradient(
                  begin: Alignment.topCenter,
@@ -128,9 +130,9 @@ class _NewproductdetailState extends State<Newproductdetail> {
                 }, icon: Icon(Icons.add)),
                 Spacer(),
                 Textwidget(text: '\$${price.toStringAsFixed(2)}', fontcolor: Colors.black, fontsize: 18),],),
-           SizedBox(height: 20,),
+           SizedBox(height: 10,),
             Divider(
-              color: Colors.grey.shade500,
+              color: Colors.grey.shade300,
               endIndent: 20,
               indent: 20,
             ),
@@ -149,10 +151,39 @@ class _NewproductdetailState extends State<Newproductdetail> {
             ),
             SizedBox(height: 10,),
             Divider(
-              color: Colors.grey.shade500,
+              color: Colors.grey.shade300,
               endIndent: 20,
               indent: 20,
             ),
+            SizedBox(height: 10,),
+            Row(
+                children: [
+                  SizedBox(width: 20,),
+                  Textwidget(text: 'Nutritions', fontcolor: Colors.black, fontsize: 16),
+                  Spacer(),
+                  Container(
+                    width: 33,
+                    height: 18,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(5),
+                      color: Colors.grey.shade200,
+                    ),
+                    child: Center(child: Text('100gr',style: TextStyle(fontSize: 9),),),
+                  ),
+                  SizedBox(width: 10,),
+                  
+                  ImageIcon(AssetImage(AppIcons.apprightarrow))
+                ]),
+            SizedBox(height: 10,),
+            Divider(
+              color: Colors.grey.shade300,
+              endIndent: 20,
+              indent: 20,
+            ),
+            SizedBox(height: 10,),
+            Align(
+                alignment: Alignment.center,
+                child: GreenBUttonWidget(text: 'Add To Basket', onpress: (){}))
 
           ],
         ),

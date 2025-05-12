@@ -3,6 +3,7 @@ import 'package:grocreyapp/controlelr/constants/appAssets/appicons.dart';
 import 'package:grocreyapp/controlelr/constants/appAssets/appimages.dart';
 import 'package:grocreyapp/controlelr/constants/appColors/appcolors.dart';
 import 'package:grocreyapp/controlelr/widgets/text-widget.dart';
+import 'package:grocreyapp/views/auth_views/signup_scrreen/signup-screen.dart';
 class Loctionscreen extends StatefulWidget {
   const Loctionscreen({super.key});
 
@@ -88,7 +89,9 @@ class _LoctionscreenState extends State<Loctionscreen> {
                         Align(
                           alignment: Alignment.center,
                           child: InkWell(
-                            onTap: (){},
+                            onTap: (){
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>Signupscreen()));
+                            },
                             child: Container(
                               height: 60,
                               width: 330,

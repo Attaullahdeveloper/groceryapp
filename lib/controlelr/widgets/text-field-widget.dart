@@ -9,16 +9,18 @@ class TextFieldWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: EdgeInsets.all(10),
+      height: 51,
+      width: MediaQuery.of(context).size.width*0.9,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
-        border: Border.all()
+        borderRadius: BorderRadius.circular(15),
+        color: Colors.grey.shade300,
       ),
-      child: TextFormField(
+      child: TextField(
         controller: controller,
         decoration: InputDecoration(
           hintText: hinytext,
-          prefixIcon: icon
+            border: InputBorder.none,
+          prefixIcon: icon,
         ),
       ),
     );

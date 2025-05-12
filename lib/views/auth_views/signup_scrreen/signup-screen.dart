@@ -4,6 +4,7 @@ import 'package:grocreyapp/controlelr/constants/appAssets/appimages.dart';
 import 'package:grocreyapp/controlelr/constants/appColors/appcolors.dart';
 import 'package:grocreyapp/controlelr/widgets/green_button_widget.dart';
 import 'package:grocreyapp/controlelr/widgets/text-widget.dart';
+import 'package:grocreyapp/views/auth_views/login_screen/login-screen.dart';
 class Signupscreen extends StatefulWidget {
   const Signupscreen({super.key});
 
@@ -150,12 +151,16 @@ class _LoginscreenState extends State<Signupscreen> {
                           padding: EdgeInsets.symmetric(horizontal: 16),
                           child: Row(children: [
                             Textwidget(text: 'and', fontcolor: AppColors.subtext, fontsize: 14),
-                            TextButton(onPressed: (){}, child: Textwidget(text: 'Privacy and Policy', fontcolor: AppColors.gmaincolor, fontsize: 14),),
+                            TextButton(onPressed: (){
+
+                            }, child: Textwidget(text: 'Privacy and Policy', fontcolor: AppColors.gmaincolor, fontsize: 14),),
                           ],),
                         ),
                         SizedBox(height: 20,),
                         //button start-----------------------
-                       GreenBUttonWidget(text: 'Sign Up', onpress: (){}),
+                       GreenBUttonWidget(text: 'Sign Up', onpress: (){
+                         Navigator.push(context,MaterialPageRoute(builder: (context)=>Loginscreen()));
+                       }),
                        
                         SizedBox(height: 2,),
                         Row(

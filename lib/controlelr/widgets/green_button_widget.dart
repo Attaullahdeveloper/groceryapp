@@ -14,7 +14,7 @@ class GreenBUttonWidget extends StatelessWidget {
       onTap: onpress,
       child: Container(
         height: 60,
-        width: 248,
+        width: 330,
         decoration: BoxDecoration(
           color: AppColors.gmaincolor,
           borderRadius: BorderRadius.circular(19)

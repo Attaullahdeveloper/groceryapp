@@ -252,7 +252,13 @@ class _NewshopscreenState extends State<Newshopscreen> {
                     itemBuilder:(context,index){
                       return
                         InkWell(
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>Newproductdetail(
+                                maintext: bestselling[index].maintext.toString(),
+                                subtext: bestselling[index].subtext.toString(),
+                                image: bestselling[index].image.toString(),
+                                pricetext: bestselling[index].pricetext.toString())));
+                          },
                           child: Container(
                               margin: EdgeInsets.all(5),
                               width: 152,
@@ -346,7 +352,13 @@ class _NewshopscreenState extends State<Newshopscreen> {
                     itemBuilder:(context,index){
                       return
                         InkWell(
-                          onTap: (){},
+                          onTap: (){
+                            Navigator.push(context,MaterialPageRoute(builder: (context)=>Newproductdetail(
+                                maintext: lastcontainer[index].maintext.toString(),
+                                subtext: lastcontainer[index].subtext.toString(),
+                                image: lastcontainer[index].image.toString(),
+                                pricetext: lastcontainer[index].pricetext.toString())));
+                          },
                           child: Container(
                               margin: EdgeInsets.all(5),
                               width: 152,

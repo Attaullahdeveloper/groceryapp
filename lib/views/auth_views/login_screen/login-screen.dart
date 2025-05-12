@@ -5,6 +5,7 @@ import 'package:grocreyapp/controlelr/constants/appAssets/appicons.dart';
 import 'package:grocreyapp/controlelr/constants/appAssets/appimages.dart';
 import 'package:grocreyapp/controlelr/constants/appColors/appcolors.dart';
 import 'package:grocreyapp/controlelr/widgets/text-widget.dart';
+import 'package:grocreyapp/views/home_views/new_shop_screen/new_shop_screen.dart';
 class Loginscreen extends StatefulWidget {
   const Loginscreen({super.key});
 
@@ -124,16 +125,21 @@ class _LoginscreenState extends State<Loginscreen> {
                              //    Get.snackbar()
                               }
                           },
-                          child: Container(
-                            height: 60,
-                            width: 330,
-                            decoration: BoxDecoration(
-                              borderRadius: BorderRadius.circular(19),
-                              color: AppColors.gmaincolor,
+                          child: InkWell(
+                            onTap: (){
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>Newshopscreen()));
+                            },
+                            child: Container(
+                              height: 60,
+                              width: 330,
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(19),
+                                color: AppColors.gmaincolor,
+                              ),
+                              child: Align(
+                                  alignment: Alignment.center,
+                                  child: Textwidget(text: 'Log In', fontcolor: Colors.white, fontsize: 18)),
                             ),
-                            child: Align(
-                                alignment: Alignment.center,
-                                child: Textwidget(text: 'Log In', fontcolor: Colors.white, fontsize: 18)),
                           ),
                         ),
                       ),

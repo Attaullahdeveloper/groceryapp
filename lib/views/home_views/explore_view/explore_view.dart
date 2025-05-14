@@ -12,6 +12,9 @@ class ExploreView extends StatefulWidget {
 class _ExploreViewState extends State<ExploreView> {
   @override
   Widget build(BuildContext context) {
+   final List<Color> containercolor=[
+     Color('value'),//list for colors.----------------------------------
+   ];
     return Scaffold(
       body:   Column(
         children: [
@@ -23,8 +26,30 @@ class _ExploreViewState extends State<ExploreView> {
 
                 alignment: Alignment.center,
                 child: TextFieldWidget(controller: TextEditingController(), icon: ImageIcon(AssetImage(AppIcons.searchicon)), hinytext:'Serach here',)),
-          )
-
+          ),
+                   Expanded(
+                     child: Padding(
+                       padding: EdgeInsets.symmetric(horizontal: 16),
+                       child: GridView.builder(
+                           gridDelegate: (SliverGridDelegateWithFixedCrossAxisCount(
+                             crossAxisCount: 2,
+                             crossAxisSpacing: 10,
+                             childAspectRatio:0.8,
+                             mainAxisSpacing: 20,
+                           )),
+                           itemCount: 12,
+                           itemBuilder: (context,index){
+                             return Container(
+                               height: 150,
+                               width: 174,
+                               decoration: BoxDecoration(
+                                 borderRadius: BorderRadius.circular(18),
+                                 color: Colors.black
+                               ),
+                             );
+                           }),
+                     ),
+                   ),
         ],
       ),
     );

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocreyapp/models/shop_model_class/shop-model.dart';
-import 'package:grocreyapp/views/bottom_vav_bar/bottom-vav-bar.dart';
 import 'package:grocreyapp/views/home_views/new_shop_screen/ShopPro_detail.dart';
+import 'package:grocreyapp/views/home_views/new_shop_screen/seeall_screen/Seeall_screeview.dart';
 
 import '../../../controlelr/constants/appAssets/appimages.dart';
 import '../../../controlelr/constants/appColors/appcolors.dart';
@@ -43,6 +43,7 @@ class _NewshopscreenState extends State<Newshopscreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+    // bottomNavigationBar: BottomBar(),
      // bottomNavigationBar: BottomBar(),
       body: SingleChildScrollView(
         child: Column(
@@ -165,8 +166,12 @@ class _NewshopscreenState extends State<Newshopscreen> {
                 Padding(
                     padding: EdgeInsets.symmetric(horizontal: 17),
                     child: Textwidget(text: 'Exclusive offer', fontcolor: Colors.black, fontsize: 24)),
-               SizedBox(width: 110,),
-                Textwidget(text: 'See All', fontcolor: AppColors.gmaincolor, fontsize: 16),
+               SizedBox(width: 90,),
+                TextButton(onPressed: (){
+                  Navigator.push(context, MaterialPageRoute(builder: (context)=>SeeallScreeview()));
+                }, child:  Textwidget(text: 'See All', fontcolor: AppColors.gmaincolor, fontsize: 16)),
+
+
               ],
             ),
             SizedBox(

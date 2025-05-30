@@ -6,4 +6,5 @@ class AppIcons{
   static String appleftarrow='figmaimg/leftarrow.png';
   static String searchicon='figmaimg/search.png';
   static String addIcon='figmaimg/addIcon.png';
+  static String filtericon='figmaimg/filtericons.png';
 }

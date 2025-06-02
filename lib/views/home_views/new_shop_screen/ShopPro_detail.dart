@@ -94,13 +94,6 @@ class _NewproductdetailState extends State<Newproductdetail> {
             Row(
               children: [
                 IconButton(onPressed: (){
-                  print('-------------------decrement-1');
-
-
-                     // Get.snackbar('Error', 'Minimum one number must be selected',
-                     //   backgroundColor: Colors.white,
-                     //   icon: Icon(Icons.error)
-                     // );
                   if(value>1) {
                     value--;
                     price = price - price1;

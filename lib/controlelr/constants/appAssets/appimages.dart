@@ -38,5 +38,9 @@ class AppImages{
   static String seeall4='figmaimg/see4.png';
   static String seeall5='figmaimg/see5.png';
   static String seeall6='figmaimg/see6.png';
+  static String comp1='figmaimg/comp1.png';
+  static String comp2='figmaimg/comp2.png';
+  static String comp3='figmaimg/comp3.png';
+  static String comp4='figmaimg/comp4.png';
 
 }

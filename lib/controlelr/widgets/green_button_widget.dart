@@ -10,11 +10,12 @@ class GreenBUttonWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
+    return
+      GestureDetector(
       onTap: onpress,
       child: Container(
-        height: 60,
-        width: 330,
+        height: 55,
+        width: 320,
         decoration: BoxDecoration(
           color: AppColors.gmaincolor,
           borderRadius: BorderRadius.circular(19)

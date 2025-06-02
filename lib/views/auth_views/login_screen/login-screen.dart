@@ -5,6 +5,8 @@ import 'package:grocreyapp/controlelr/constants/appAssets/appicons.dart';
 import 'package:grocreyapp/controlelr/constants/appAssets/appimages.dart';
 import 'package:grocreyapp/controlelr/constants/appColors/appcolors.dart';
 import 'package:grocreyapp/controlelr/widgets/text-widget.dart';
+import 'package:grocreyapp/views/auth_views/signup_scrreen/signup-screen.dart';
+import 'package:grocreyapp/views/bottom_vav_bar/bottom-vav-bar.dart';
 import 'package:grocreyapp/views/home_views/new_shop_screen/new_shop_screen.dart';
 class Loginscreen extends StatefulWidget {
   const Loginscreen({super.key});
@@ -127,7 +129,7 @@ class _LoginscreenState extends State<Loginscreen> {
                           },
                           child: InkWell(
                             onTap: (){
-                              Navigator.push(context,MaterialPageRoute(builder: (context)=>Newshopscreen()));
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>BottomBar()));
                             },
                             child: Container(
                               height: 60,
@@ -149,7 +151,9 @@ class _LoginscreenState extends State<Loginscreen> {
                         children: [
                           Textwidget(text: 'Dont have any account?', fontcolor: Colors.black, fontsize: 14),
                           SizedBox(width: 4,),
-                 TextButton(onPressed: (){}, child: Textwidget(text: 'Signup', fontcolor: AppColors.gmaincolor, fontsize: 14) )
+                 TextButton(onPressed: (){
+                   Navigator.push(context, MaterialPageRoute(builder: (context)=>Signupscreen()));
+                 }, child: Textwidget(text: 'Signup', fontcolor: AppColors.gmaincolor, fontsize: 14) )
 
                         ],)
                     ],
